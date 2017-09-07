@@ -111,9 +111,14 @@ while(i <= 880 && index <= 924)
 
 for(var k = 0; k < list.length; ++k)
 {
-	if(list[k] == -1)
+	if(list[k] == -1 && list[k - 1] != -1)
 	{
-		console.log(k + " is missing");
+		list[k + 1] != -1 ? console.log(k + " is missing") : str = "Missing numbers between and including " + k;
+	}
+	else if(list[k] != -1 && list[k - 1] == -1 && list[k - 2] == -1)
+	{
+		console.log(str + " and " + (k - 1));
+		str = "";
 	}
 	/*else if(list[k] == -2)
 	{
